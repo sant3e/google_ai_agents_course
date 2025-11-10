@@ -10,6 +10,10 @@ The 5-Day AI Agents Intensive is an online course designed to help developers ex
 - How agents move beyond LLM prototypes to become production-ready systems
 - Hands-on examples, codelabs, and practical implementations
 
+## Resources
+
+- [Agent Development Kit](https://google.github.io/adk-docs/) - Official documentation for Google's Agent Development Kit
+
 ## Repository Content
 
 This repository follows the course structure with my own versions of the Jupyter notebooks for each day:
