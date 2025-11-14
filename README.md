@@ -11,7 +11,7 @@ The 5-Day AI Agents Intensive is an online course designed to help developers ex
 - Hands-on examples, codelabs, and practical implementations
 
 ## Resources
-
+- [Original Course](https://www.kaggle.com/learn-guide/5-day-agents) 
 - [Agent Development Kit](https://google.github.io/adk-docs/) - Official documentation for Google's Agent Development Kit
 
 ## Repository Content
@@ -25,6 +25,18 @@ This repository follows the course structure with both the original Jupyter note
 - **Day 2**: Building Agents with Tools
   - `Day2a.ipynb` / `Day2a.py` - First part of Day 2 exercises (Building Agents with Custom Tools)
   - `Day2b.ipynb` / `Day2b.py` - Second part of Day 2 exercises (Advanced Agent Tool Patterns)
+
+- **Day 3**: Stateful Agents and Memory
+  - `Day3a.ipynb` / `Day3a.py` - Building Stateful Agents with Sessions (demonstrates session management to track continuous conversations)
+  - `Day3b.ipynb` / `Day3b.py` - Equipping Agents with Long-Term Memory via In-Memory Service (shows how to give AI agents persistent memory)
+
+- **Day 4**: Observability and Evaluation
+  - `Day4a.ipynb` / `Day4a.py` - Agent Observability with Logs, Traces, and Metrics (implements observability in AI agents)
+  - `Day4b.ipynb` / `Day4b.py` - Proactive Agent Evaluation with ADK (demonstrates evaluation of agent performance)
+
+- **Day 5**: Agent-to-Agent Communication and Deployment
+  - `Day5a.ipynb` / `Day5a.py` - Agent-to-Agent (A2A) Communication (builds multi-agent systems where agents communicate with each other)
+  - `Day5b.ipynb` / `Day5b.py` - Deploying Your ADK Agent to Production with Vertex AI Agent Engine (provides walkthrough of deploying containerized ADK agents)
 
 ## Additional Python Files
 

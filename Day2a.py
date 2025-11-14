@@ -21,7 +21,7 @@ Prerequisites:
 - A .env file in the root directory with a GOOGLE_API_KEY.
 """
 
-from initial_setup import GEMINI_MODEL, setup_environment, asyncio, sys
+from initial_setup import *
 from google.genai import types
 from google.adk.agents import LlmAgent
 from google.adk.models.google_llm import Gemini
@@ -239,16 +239,43 @@ async def main() -> None:
     print("\n--- All Custom Tool Demonstrations Complete ---")
 
 
+# ==============================================================================
+# --- Running the Demonstration ---
+# ==============================================================================
+#
+# This script is designed to be run in two ways:
+#
+# 1. Interactive Environment (e.g., Jupyter Notebook, VS Code Interactive Window):
+#    Step 1: Select the entire code from the top of the file down to (but not including)
+#            the `if __name__ == "__main__":` block at the bottom.
+#    Step 2: Press SHIFT+ENTER to execute the selected code in the interactive window.
+#            This will compile and load all the functions and classes into memory.
+#    Step 3: In the interactive input box at the bottom right, type `await main()`
+#            and press ENTER to run the demonstration.
+#
+# 2. Command-Line Execution:
+#    The script can also be run directly from the terminal.
+#
+#        python Day2a.py
+#
+# ==============================================================================
+
+
 if __name__ == "__main__":
     # This block handles running the async main function in different environments.
+    # `asyncio.run()` is the standard for scripts, but it fails in environments
+    # with a running event loop (like Jupyter).
     try:
         asyncio.run(main())
     except RuntimeError as e:
         if "cannot be called from a running event loop" in str(e):
+            # If in a Jupyter notebook or other interactive environment, schedule
+            # the main function as a task on the existing loop.
             print("Running in an interactive environment. Scheduling main as a task.")
             loop = asyncio.get_running_loop()
             loop.create_task(main())
         else:
+            # Re-raise other RuntimeErrors.
             raise
     except ValueError as e:
         print(f"❌ Error: {e}", file=sys.stderr)

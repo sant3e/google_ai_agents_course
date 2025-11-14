@@ -40,4 +40,10 @@ def setup_environment() -> None:
     # The ADK and underlying libraries use these environment variables for auth.
     os.environ["GOOGLE_API_KEY"] = google_api_key
     os.environ["GOOGLE_GENAI_USE_VERTEXAI"] = "FALSE"
+    
+    # For RAG functionality with Vertex AI
+    gcp_project_id = os.environ.get("GOOGLE_CLOUD_PROJECT")
+    if gcp_project_id:
+        os.environ["GOOGLE_CLOUD_PROJECT"] = gcp_project_id
+    
     print("✅ Environment configured successfully.")
